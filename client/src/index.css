@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* Enable Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================
+   GLOBAL THEME
+========================================= */
+
+body {
+  @apply min-h-screen
+  bg-gradient-to-br
+  from-violet-50
+  via-white
+  to-cyan-50
+  dark:from-slate-950
+  dark:via-slate-900
+  dark:to-slate-950
+  text-slate-800
+  dark:text-slate-100;
+}
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+.label {
+  @apply block text-sm font-medium mb-2
+  text-slate-700 dark:text-slate-300;
+}
+
+.label-sm {
+  @apply text-xs uppercase tracking-wider
+  text-slate-500 dark:text-slate-400;
+}
+
+.input {
+  @apply w-full
+  px-4 py-3
+  rounded-xl
+  bg-white/80
+  dark:bg-slate-800/80
+  backdrop-blur-sm
+  border
+  border-violet-200
+  dark:border-slate-700
+  text-sm
+  text-slate-900
+  dark:text-slate-100
+  transition-all
+  duration-200
+  focus:outline-none
+  focus:ring-4
+  focus:ring-violet-500/20
+  focus:border-violet-500;
+}
+
+/* =========================================
+   SHARED CARD STYLE
+========================================= */
+
+.info-card,
+.kpi-card,
+.analytics-card,
+.profile-card {
+  @apply bg-white/70
+  dark:bg-slate-900/70
+  backdrop-blur-md
+  border
+  border-white/30
+  dark:border-slate-700/50
+  rounded-2xl
+  shadow-lg
+  shadow-slate-200/40
+  dark:shadow-black/20
+  transition-all
+  duration-300
+  hover:-translate-y-1
+  hover:shadow-xl;
+}
+
+/* =========================================
+   INFO CARD
+========================================= */
+
+.info-card {
+  @apply p-5 flex flex-col gap-3;
+}
+
+.info-card svg {
+  @apply text-violet-600 dark:text-violet-400;
+}
+
+.value {
+  @apply font-semibold
+  text-slate-900
+  dark:text-slate-100;
+}
+
+/* =========================================
+   KPI CARDS
+========================================= */
+
+.kpi-card {
+  @apply p-5 flex flex-col gap-3;
+}
+
+.kpi-card svg {
+  @apply text-violet-600 dark:text-violet-400;
+}
+
+.kpi-card.warning svg {
+  @apply text-rose-500;
+}
+
+.kpi-label {
+  @apply text-sm
+  text-slate-500
+  dark:text-slate-400;
+}
+
+.kpi-value {
+  @apply text-3xl
+  font-bold
+  bg-gradient-to-r
+  from-violet-600
+  to-cyan-500
+  bg-clip-text
+  text-transparent;
+}
+
+/* =========================================
+   ANALYTICS
+========================================= */
+
+.analytics-card {
+  @apply p-6;
+}
+
+.analytics-title {
+  @apply font-semibold
+  text-slate-900
+  dark:text-slate-100;
+}
+
+.funnel-row {
+  @apply flex
+  justify-between
+  px-4
+  py-3
+  rounded-xl
+  bg-white/60
+  dark:bg-slate-800/60
+  border
+  border-slate-200/50
+  dark:border-slate-700/50
+  text-sm
+  transition-all
+  hover:bg-violet-50
+  dark:hover:bg-slate-700;
+}
+
+/* =========================================
+   FEES BOX
+========================================= */
+
+.fees-box {
+  @apply rounded-2xl
+  p-5
+  text-center
+  backdrop-blur-sm
+  border
+  border-white/30
+  dark:border-slate-700/40;
+}
+
+.fees-box h4 {
+  @apply text-2xl font-bold;
+}
+
+.fees-box.paid {
+  @apply bg-gradient-to-r
+  from-emerald-500/10
+  to-teal-500/10
+  text-emerald-600
+  dark:text-emerald-400;
+}
+
+.fees-box.due {
+  @apply bg-gradient-to-r
+  from-rose-500/10
+  to-orange-500/10
+  text-rose-600
+  dark:text-rose-400;
+}
+
+/* =========================================
+   SUMMARY BOX
+========================================= */
+
+.summary-box {
+  @apply rounded-2xl
+  p-5
+  text-center
+  backdrop-blur-sm;
+}
+
+.summary-box.success {
+  @apply bg-gradient-to-r
+  from-emerald-500/10
+  to-teal-500/10
+  text-emerald-600
+  dark:text-emerald-400;
+}
+
+.summary-box.danger {
+  @apply bg-gradient-to-r
+  from-rose-500/10
+  to-orange-500/10
+  text-rose-600
+  dark:text-rose-400;
+}
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+  @apply p-5;
+}
+
+.profile-card .icon {
+  @apply text-violet-600
+  dark:text-violet-400
+  mb-3;
+}
+
+.profile-card .label {
+  @apply text-xs
+  text-slate-500
+  dark:text-slate-400;
+}
+
+.profile-card .value {
+  @apply text-lg
+  font-semibold
+  text-slate-900
+  dark:text-white;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary {
+  @apply px-5
+  py-2.5
+  rounded-xl
+  text-white
+  font-medium
+  bg-gradient-to-r
+  from-violet-600
+  to-cyan-500
+  shadow-md
+  hover:opacity-90
+  hover:shadow-lg
+  transition-all;
+}
+
+.btn-secondary {
+  @apply px-5
+  py-2.5
+  rounded-xl
+  border
+  border-slate-200
+  dark:border-slate-700
+  bg-white
+  dark:bg-slate-800
+  text-slate-700
+  dark:text-slate-200
+  hover:bg-slate-50
+  dark:hover:bg-slate-700
+  transition-all;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.7);
+}
+
+/* =========================================
+   SELECTION COLOR
+========================================= */
+
+::selection {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* =========================================
+   SMOOTH ANIMATIONS
+========================================= */
+
+* {
+  @apply transition-colors;
+}
